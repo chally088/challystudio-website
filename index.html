@@ -38,11 +38,16 @@ nav .brand{display:flex;align-items:center;gap:11px;font-family:var(--serif);fon
   letter-spacing:.16em;font-size:14px;white-space:nowrap;color:var(--ink);border:0}
 nav .brand img{width:40px;height:40px;object-fit:contain}
 nav .stations{display:flex;gap:20px;font-size:14.5px;color:var(--dim);white-space:nowrap}
-nav .stations a{position:relative;padding-bottom:4px;transition:color .2s;border:0;color:var(--dim)}
+nav .stations a,nav .stations span{position:relative;padding-bottom:4px;transition:color .2s;border:0;color:var(--dim)}
 nav .stations a:hover{color:var(--ink)}
 nav .stations a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;
   background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .25s}
 nav .stations a:hover::after{transform:scaleX(1)}
+nav .stations span{cursor:default}
+nav .util span.txt{cursor:default}
+nav .util span.auth-btn{cursor:default}
+nav .util span.auth-btn:hover{border-color:var(--gold-soft);background:transparent;color:var(--gold-lt)}
+nav .util span.auth-btn.solid:hover{background:var(--gold);border-color:var(--gold);color:#141005}
 nav .util{margin-left:auto;display:flex;align-items:center;gap:14px;white-space:nowrap}
 nav .util .txt{color:var(--dim);border:0}
 nav .util .txt:hover{color:var(--ink)}
@@ -152,19 +157,20 @@ footer .lockup{display:flex;align-items:center;gap:12px}
 <body>
 <nav>
   <a class="brand" href="./"><img src="assets/badge.png" alt="Chally Studio">CHALLY STUDIO</a>
+  <!-- 四站與會員頁還沒推上來，先掛名字不給點（上架時再換回 <a href>） -->
   <div class="stations">
-    <a href="/食神/shishen.html">食神</a>
-    <a href="/釣客江湖/angler.html">釣客江湖</a>
-    <a href="/首頁/原型/lifehack.html">生活工作不正經</a>
-    <a href="/及時行樂/index.html">及時行樂</a>
-    <a href="/公益新視野/網站/index.html">公益新視野</a>
+    <span>食神</span>
+    <span>釣客江湖</span>
+    <span>生活工作不正經</span>
+    <span>及時行樂</span>
+    <span>公益新視野</span>
   </div>
   <div class="util">
-    <a class="txt" href="/首頁/原型/wish.html">許願池</a>
+    <span class="txt">許願池</span>
     <a class="txt" href="mailto:contact@challystudio.com">信箱</a>
     <span class="sep"></span>
-    <a class="auth-btn" href="/login.html?mode=register">註冊</a>
-    <a class="auth-btn solid" href="/login.html">登入</a>
+    <span class="auth-btn">註冊</span>
+    <span class="auth-btn solid">登入</span>
   </div>
 </nav>
 
